@@ -1,23 +1,30 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { IUser } from '../interface/user';
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ApiService {
-  endpoint = "https://sdw-2023api-prd.up.railway.app/users";
-  constructor(private http: HttpClient) {  }
+  endpoint = 'https://sdw-2023api-prd.up.railway.app/users';
+  constructor(private http: HttpClient) {}
 
-  findAllUsers(){
-    return "a";
+  findAllUsers() {
+    return this.http.get<IUser[]>(`${this.endpoint}`);
   }
 
-  findOneUser(id: number){
-
+  findOneUser(id: number) {
+    return this.http.get<IUser>(`${this.endpoint}/${id}`);
   }
 
-  registerUser(id: number){}
+  registerUser(user: IUser) {
+    return this.http.post(`${this.endpoint}`, user);
+  }
 
-  editUser(id: number){}
+  editUser(id: number, user: IUser) {
+    return this.http.put<IUser>(`${this.endpoint}/${id}`, user);
+  }
 
-  deleteUser(id:number){}
+  deleteUser(id: number) {
+    return this.http.delete(`${this.endpoint}/${id}`);
+  }
 }
