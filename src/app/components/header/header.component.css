@@ -1,0 +1,25 @@
+.container__header {
+    width: 100%;
+    height: 100px;
+    background-color: red;
+    align-content: center;
+}
+
+.link-list__header{
+    
+    display: flex;
+}
+
+.link-list__header > li{
+    padding: 50px;
+    list-style: none;
+}
+
+.link-list__header > li > a{
+    color: white;
+    text-decoration: none;
+}
+
+.link-list__header > li > a:hover{
+    color: black;
+}
