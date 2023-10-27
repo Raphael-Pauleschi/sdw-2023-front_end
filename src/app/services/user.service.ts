@@ -4,7 +4,7 @@ import { IUser } from '../interface/user';
 @Injectable({
   providedIn: 'root',
 })
-export class ApiService {
+export class UserService {
   endpoint = 'https://sdw-2023api-prd.up.railway.app/users';
   constructor(private http: HttpClient) {}
 

@@ -1,1 +1,32 @@
-<p>list works!</p>
+<div class="container__list">
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Account Nº</th>
+                <th scope="col">Account Balance</th>
+                <th scope="col">Account Limit</th>
+                <th scope="col">Card Nº</th>
+                <th scope="col">Card Limit</th>
+                <th scope="col">Actions</th>
+            </tr>
+
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <th scope="row">{{user.id}}</th>
+                <td>{{user.name}}</td>
+                <td>{{user.account.number}}</td>
+                <td>{{user.account.balance}}</td>
+                <td>{{user.account.limit}}</td>
+                <td>{{user.card.number}}</td>
+                <td>{{user.card.limit}}</td>
+                <td>
+                    <button (click)="delete(user.id)">Delete</button>
+                    <button [routerLink]="['users/edit', user.id]">Update</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
