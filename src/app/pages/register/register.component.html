@@ -1,1 +1,43 @@
-<p>register works!</p>
+<div class="container__register">
+    <form>
+        <div class="col-4">
+            <app-form-input
+            inputName="name"
+            [parentFormGroup]="userForm"
+            ></app-form-input>
+        </div>
+        <div class="col-4">
+            <app-form-input
+            inputName="accountNumber"
+            [parentFormGroup]="userForm"
+            ></app-form-input>
+        </div>
+        <div class="col-4">
+            <app-form-input
+            inputType="number"
+            inputName="accountBalance"
+            [parentFormGroup]="userForm"
+            ></app-form-input>
+        </div>
+        <div class="col-4">
+            <app-form-input
+            inputType="number"
+            inputName="accountLimit"
+            [parentFormGroup]="userForm"
+            ></app-form-input>
+        </div>
+        <div class="col-4">
+            <app-form-input
+            inputName="cardNumber"
+            [parentFormGroup]="userForm"
+            ></app-form-input>
+        </div>
+        <div class="col-4">
+            <app-form-input
+            inputType="number"
+            inputName="cardLimit"
+            [parentFormGroup]="userForm"
+            ></app-form-input>
+        </div>
+    </form>
+</div>

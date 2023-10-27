@@ -1,0 +1,11 @@
+<div class="container__input" [formGroup]="parentFormGroup">
+    <label for="{{inputName}}" class="form_label">
+        {{labelName || formatLabelName(inputName)}}
+    </label>
+    <input
+    type="{{inputType}}"
+    class="form-control"
+    id="{{inputName}}"
+    formControlName="{{inputName}}"
+    >
+</div>

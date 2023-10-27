@@ -1,0 +1,7 @@
+.col-4 {
+    width: 33.33%; /* Definindo a largura da coluna como 4/12 (33.33%) */
+    float: left;   /* Flutuar a coluna para que elas se alinhem horizontalmente */
+    padding: 10px; /* Adicione preenchimento interno, se necessário */
+    box-sizing: border-box; /* Evitar que o preenchimento afete a largura real da coluna */
+  }
+  
