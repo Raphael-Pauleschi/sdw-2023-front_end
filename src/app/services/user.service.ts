@@ -1,30 +1,36 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { IUser } from '../interface/user';
+import { IUser } from '../interface/dataTransfer/user';
+import { IUserInput } from '../interface/dataInput/user';
+import { environment } from '../components/enviroment/environment';
+
 @Injectable({
   providedIn: 'root',
 })
+
+
 export class UserService {
-  endpoint = 'https://sdw-2023api-prd.up.railway.app/users';
+  endpoint = 'users';
+  api = environment.apiPrd;
   constructor(private http: HttpClient) {}
 
   findAllUsers() {
-    return this.http.get<IUser[]>(`${this.endpoint}`);
+    return this.http.get<IUser[]>(`${this.api}/${this.endpoint}`);
   }
 
   findOneUser(id: number) {
-    return this.http.get<IUser>(`${this.endpoint}/${id}`);
+    return this.http.get<IUser>(`${this.api}/${this.endpoint}/${id}`);
   }
 
-  registerUser(user: IUser) {
-    return this.http.post(`${this.endpoint}`, user);
+  registerUser(user: IUserInput ) {
+    return this.http.post(`${this.api}/${this.endpoint}`, user);
   }
 
   editUser(id: number, user: IUser) {
-    return this.http.put<IUser>(`${this.endpoint}/${id}`, user);
+    return this.http.put<IUser>(`${this.api}/${this.endpoint}/${id}`, user);
   }
 
   deleteUser(id: number) {
-    return this.http.delete(`${this.endpoint}/${id}`);
+    return this.http.delete(`${this.api}/${this.endpoint}/${id}`);
   }
 }

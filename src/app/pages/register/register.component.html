@@ -1,5 +1,5 @@
 <div class="container__register">
-    <form>
+    <form [formGroup]="userForm" (ngSubmit)="register()">
         <div class="col-4">
             <app-form-input
             inputName="name"
@@ -9,6 +9,12 @@
         <div class="col-4">
             <app-form-input
             inputName="accountNumber"
+            [parentFormGroup]="userForm"
+            ></app-form-input>
+        </div>
+        <div class="col-4">
+            <app-form-input
+            inputName="accountAgency"
             [parentFormGroup]="userForm"
             ></app-form-input>
         </div>
@@ -39,5 +45,7 @@
             [parentFormGroup]="userForm"
             ></app-form-input>
         </div>
+
+       <button type="submit" [disabled]="!userForm.valid">Save</button>
     </form>
 </div>
