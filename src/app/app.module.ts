@@ -11,6 +11,7 @@ import { ListComponent } from './pages/list/list.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FormInputComponent } from './components/form-input/form-input.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

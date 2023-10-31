@@ -26,8 +26,8 @@ export class UserService {
     return this.http.post(`${this.api}/${this.endpoint}`, user);
   }
 
-  editUser(id: number, user: IUser) {
-    return this.http.put<IUser>(`${this.api}/${this.endpoint}/${id}`, user);
+  editUser(id: number, user: IUserInput) {
+    return this.http.put<IUserInput>(`${this.api}/${this.endpoint}/${id}`, user);
   }
 
   deleteUser(id: number) {
