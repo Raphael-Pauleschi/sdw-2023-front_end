@@ -23,7 +23,11 @@ export class ListComponent {
   }
 
   delete(id: number){
-    console.log("Usuario de id ",id," não foi deletado com sucesso")
+    this.userService.deleteUser(id).subscribe(()=>{
+      console.log("User deleted")
+    },error=>{
+      console.error(error)
+    })
   }
 
 }
